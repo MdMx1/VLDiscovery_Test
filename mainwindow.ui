@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>391</width>
+    <height>317</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>391</width>
+    <height>317</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>VLDiscovery</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="vldiscovery.qrc">
+    <normaloff>:/PNG/My_computer.png</normaloff>:/PNG/My_computer.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGroupBox" name="systemBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>121</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Clock Security System</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="nmiLabel">
+       <property name="text">
+        <string>NMI</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="clockBox">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>141</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Время / Дата</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <widget class="QLabel" name="timeDataPcLabel">
+       <property name="text">
+        <string>PC</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="timeDataMcuLabel">
+       <property name="text">
+        <string>MCU</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="synchroButton">
+       <property name="text">
+        <string>Синхронизировать</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="adcBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>121</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ADC</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="adcLabel">
+       <property name="text">
+        <string>ADC</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="thermoBox">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>10</y>
+      <width>91</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>MCU °C</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="test">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>271</width>
+      <height>81</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>391</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFill">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="actionConnect"/>
+    <addaction name="actionDisconnect"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Инструменты</string>
+    </property>
+    <addaction name="actionConfigure"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Помощь</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAboutQt"/>
+   </widget>
+   <addaction name="menuFill"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionConnect"/>
+   <addaction name="actionDisconnect"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionConnect">
+   <property name="icon">
+    <iconset resource="vldiscovery.qrc">
+     <normaloff>:/PNG/Connect.png</normaloff>:/PNG/Connect.png</iconset>
+   </property>
+   <property name="text">
+    <string>Соеденить</string>
+   </property>
+   <property name="toolTip">
+    <string>Активировать  порт</string>
+   </property>
+   <property name="shortcut">
+    <string>Return</string>
+   </property>
+  </action>
+  <action name="actionDisconnect">
+   <property name="icon">
+    <iconset resource="vldiscovery.qrc">
+     <normaloff>:/PNG/Disconnect.png</normaloff>:/PNG/Disconnect.png</iconset>
+   </property>
+   <property name="text">
+    <string>Разъеденить</string>
+   </property>
+   <property name="toolTip">
+    <string>Деактивировать порт</string>
+   </property>
+   <property name="shortcut">
+    <string>Return</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="vldiscovery.qrc">
+     <normaloff>:/PNG/Bouton-arrИt.png</normaloff>:/PNG/Bouton-arrИt.png</iconset>
+   </property>
+   <property name="text">
+    <string>Выход</string>
+   </property>
+   <property name="toolTip">
+    <string>Выход из программы</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="actionConfigure">
+   <property name="icon">
+    <iconset resource="vldiscovery.qrc">
+     <normaloff>:/PNG/Refresh.png</normaloff>:/PNG/Refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Конфигурация</string>
+   </property>
+   <property name="toolTip">
+    <string>Конфигурация COM - порта</string>
+   </property>
+   <property name="shortcut">
+    <string>F12</string>
+   </property>
+  </action>
+  <action name="actionReserve1">
+   <property name="text">
+    <string>Резерв 1</string>
+   </property>
+  </action>
+  <action name="actionReserve2">
+   <property name="text">
+    <string>Резерв 2</string>
+   </property>
+  </action>
+  <action name="actionReserve3">
+   <property name="text">
+    <string>Резерв 3</string>
+   </property>
+  </action>
+  <action name="actionReserve4">
+   <property name="text">
+    <string>Резерв 4</string>
+   </property>
+  </action>
+  <action name="actionReserve5">
+   <property name="text">
+    <string>Резерв 5</string>
+   </property>
+  </action>
+  <action name="actionReserve6">
+   <property name="text">
+    <string>Резерв 6</string>
+   </property>
+  </action>
+  <action name="actionReserve7">
+   <property name="text">
+    <string>Резерв 7</string>
+   </property>
+  </action>
+  <action name="actionReserve8">
+   <property name="text">
+    <string>Резерв 8</string>
+   </property>
+  </action>
+  <action name="actionReserve9">
+   <property name="text">
+    <string>Резерв 9</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="vldiscovery.qrc">
+     <normaloff>:/PNG/Info.png</normaloff>:/PNG/Info.png</iconset>
+   </property>
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="actionAboutQt">
+   <property name="icon">
+    <iconset resource="vldiscovery.qrc">
+     <normaloff>:/PNG/LogOff.png</normaloff>:/PNG/LogOff.png</iconset>
+   </property>
+   <property name="text">
+    <string>О Qt</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="vldiscovery.qrc"/>
+ </resources>
+ <connections/>
+</ui>

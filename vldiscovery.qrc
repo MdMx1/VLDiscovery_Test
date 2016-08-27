@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>PNG/Attention.png</file>
+        <file>PNG/Bouton-arrИt.png</file>
+        <file>PNG/Connect.png</file>
+        <file>PNG/Disconnect.png</file>
+        <file>PNG/Error.png</file>
+        <file>PNG/Info.png</file>
+        <file>PNG/LogOff.png</file>
+        <file>PNG/My_computer.png</file>
+        <file>PNG/Refresh.png</file>
+    </qresource>
+</RCC>
