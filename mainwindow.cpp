@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(handleError(QSerialPort::SerialPortError)));
     connect(serial, SIGNAL(readyRead()), this, SLOT(readData()));
-    //connect(ui->synchroButton, SIGNAL(clicked()), this, SLOT(wtiteData()));
+    connect(ui->synchroButton, SIGNAL(clicked()), this, SLOT(writeData()));
     connect(timer, SIGNAL(timeout()),this, SLOT(timePC()));
     timer->start(500);
 }
@@ -80,8 +80,6 @@ void MainWindow::openSerialPort()
                                    .arg(p.name).arg(p.stringBaudRate)
                                    .arg(p.stringDataBits).arg(p.stringParity)
                                    .arg(p.stringStopBits).arg(p.stringFlowControl));
-        //Write!!!!!!!!!!
-        connect(timer, SIGNAL(timeout()),this, SLOT(writeData()));//TEST!!!!!!!!!!!! на себя
     }
     else
     {
@@ -125,7 +123,7 @@ void MainWindow::readData()
         data.append(serial->readAll());
     //}
 
-    ui->test->insertPlainText(QString(data.toHex()));
+    ui->test->setPlainText(QString(data.toHex()));
 
     qDebug() << data.size() << data.toHex();
 
